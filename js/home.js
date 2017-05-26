@@ -5,6 +5,10 @@ var laptop = $(".laptop")[0]
 var laptopLarge = false
 var overlays = $(".overlay");
 var mainLaptop = "laptop"
+var menuOpen = false
+var menuLinks = $(".menuLink");
+var menuDivs = $(".menuDiv");
+var snakeStart = false;
 // MAKE SURE PAGE STARTS AT TOP WHEN RELOADED
 $(window).on('beforeunload', function() {
    $(window).scrollTop(0);
@@ -108,3 +112,57 @@ for(var i = 0; i < overlays.length; i++){
 		// laptop.classList.remove('fast')
 	})
 }
+
+// code for dropdown menu
+$(".hamburger:first").click(function(){
+	if(! menuOpen){
+		$(".barMiddle")[0].style.width = "0px"
+		$(".barMiddle")[0].style.marginLeft = "50%"
+		$(".barTop:first").addClass('hamToXLeft')
+		$(".barBottom:first").addClass('hamToXRight')
+		$(".barTop:first").removeClass("barTrans")
+		$(".barBottom:first").removeClass("barTrans")
+		$(".barMiddle:first").removeClass("barTrans")
+		$(".fadeDiv")[0].style.display = "block"
+		$(".fadeDiv:first").addClass("fadeDivAppear")
+		
+		for(var i = 0; i < menuDivs.length; i++){
+			menuDivs[i].style.display = "block"
+			
+		}
+		menuOpen = true
+	}else{
+		$(".barMiddle")[0].style.width = "100%"
+		$(".barMiddle")[0].style.marginLeft = "0"
+		$(".barTop:first").removeClass('hamToXLeft')
+		$(".barBottom:first").removeClass('hamToXRight')
+		$(".fadeDiv:first").removeClass("fadeDivAppear")
+		setTimeout(function(){
+			if(!menuOpen){
+				$(".fadeDiv")[0].style.display = "none"
+			}
+			
+		},1000)
+		for(var i = 0; i < menuDivs.length; i++){
+			menuDivs[i].style.display = "none"
+		}
+		menuOpen = false
+	}
+	
+})
+
+
+
+// INITIALIZE SNAKE GAME
+$(".startSnake:first").click(function(){
+	if(!snakeStart){
+		snakeStart = true
+		$(".startSnake")[0].innerHTML = "Stop Snake"
+		initSnake()
+	}else{
+		snakeStart = false
+		$(".startSnake")[0].innerHTML = "Start Snake"
+		end()
+	}
+})
+

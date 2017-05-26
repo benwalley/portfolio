@@ -5,6 +5,8 @@
 
 	<link rel="stylesheet" type="text/css" href="css/home.css">
 
+	<link rel="stylesheet" type="text/css" href="snake/snake.css">
+
 	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 
 	<script
@@ -20,12 +22,20 @@
 
 </head>
 <body class = "extraHeight">
+	<div class = "fadeDiv">
+		<div class = "menuDiv"><a href="#" class = "menuLink">Ben Walley</a></div>
+		<div class = "menuDiv"><a href="#" class = "menuLink">Portfolio<a></div>
+		<div class = "menuDiv"><a href="#" class = "menuLink">Pictures</a></div>
+		<div class = "menuDiv"><a href="#" class = "menuLink">Videos</a></div>
+		<div class = "menuDiv"><div class = "menuLink startSnake">Start Snake</div></div>
+		
+	</div>
 	
 
 	<div class = "hamburger">
-		<div class = "bar barTop"></div>
-		<div class = "bar barMiddle"></div>
-		<div class = "bar barBottom"></div>
+		<div class = "bar barTop barTrans"></div>
+		<div class = "bar barMiddle barTrans"></div>
+		<div class = "bar barBottom barTrans"></div>
 	</div>
 
 	<div class = "intro">
@@ -38,7 +48,11 @@
 <div class = "laptop">
 		<div class = "top">
 			<div class = "dot"></div>
-			<div class = "screen"><iframe src="http://benjwalley.com" height = "1000px" width = "1600px"></iframe></div>
+		<div class = "screen">
+			<iframe src="http://benjwalley.com" height = "1000px" width = "1600px"></iframe>
+			<div class = "expandScreen"><i class="fa fa-expand" aria-hidden="true"></i></div>
+		</div>
+
 		</div>
 
 		<div class = "bottomFront">
@@ -54,7 +68,9 @@
 <div class = "laptop2">
 		<div class = "top">
 			<div class = "dot"></div>
-			<div class = "screen"><iframe src="http://benjwalley.com" height = "1000px" width = "1600px"></iframe></div>
+			<div class = "screen"><iframe src="http://benjwalley.com" height = "1000px" width = "1600px"></iframe>
+
+			</div>
 		</div>
 
 		<div class = "bottomFront">
@@ -89,7 +105,7 @@
 	
 
 	
-
+<script type="text/javascript" src = 'snake/snake.js'></script>
 <script type="text/javascript" src = "js/home.js"></script>
 </body>
 </html>
